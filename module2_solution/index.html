@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-app="ShoppingListCheckOff">
+	<div class="box">
+		<h3>To Buy</h3>
+		<ul ng-controller="ToBuyController as buyer" class="dim">
+			
+			<p ng-if="buyer.itemstobuy.length == 0">Everything is bought!</p>
+			<li class="spread" ng-repeat="buy in  buyer.itemstobuy">Buy {{buy.quantity}} {{buy.name}} <button ng-click="buyer.movetobought(buy)" class="btn">Bought</button></li>
+		</ul>
+	</div>
+	<div class="box">
+		<h3>Already Bought</h3>
+		<ul ng-controller="AlreadyBoughtController as bought" class="dim">
+			
+			<p ng-if="bought.boughtitems.length == 0">Nothing bought yet</p>
+			<li class="spread2" ng-repeat="purchased in bought.boughtitems "> Bought {{purchased.quantity}} {{purchased.name}}</li>
+		</ul>
+	</div>	
+	
+
+</body>
+</html>

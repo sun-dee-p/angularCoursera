@@ -1,0 +1,19 @@
+.btn {
+	float: right;
+}
+.spread {
+	padding: 10px;
+}
+.spread2 {
+	padding: 10px;
+}
+.dim {
+	width: 70%;
+
+}
+.box {
+	width: 50%;
+	margin-left: 10px;
+	border: 1px solid blue;
+	margin-bottom: 5px;
+}
