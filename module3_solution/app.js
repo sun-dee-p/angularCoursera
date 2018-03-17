@@ -41,7 +41,7 @@
 			restrict:"E",
 			templateUrl:"foundItems.html",
 			scope:{
-				found:'<',
+				foundItems:'<',
 				onRemove:"&"
 			},
 			controller:directiveController,

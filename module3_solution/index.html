@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Narrow Down Your Menu Choice</title>
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body ng-app="NarrowItDownApp">
-
+	<h1>Narrow Down Your Chinese Menu Choice</h1>
 	<div ng-controller="NarrowItDownController as narrow">
-		<input type="textbox" name="" ng-model="narrow.searchTerm">
+		<input type="textbox" name="" placeholder="search term" ng-model="narrow.searchTerm">
 		<button ng-click="narrow.narrowlist(narrow.searchTerm)">Narrow It Down For Me!</button>
 		<p ng-if="narrow.show">Nothing found</p>
-		<found-items found="narrow.found" on-remove="narrow.remove(arg1)"></found-items>
+		<found-items found-items="narrow.found" on-remove="narrow.remove(arg1)"></found-items>
 	</div>
 
 </body>
