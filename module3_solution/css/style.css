@@ -1,0 +1,9 @@
+.arrange {
+	margin:5px;
+}
+.arrange > p{
+	margin: 5px;
+}
+.btn {
+	display: block;
+}

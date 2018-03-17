@@ -1,0 +1,11 @@
+<ol>
+	<li ng-repeat="item in dirctrl.found">
+		<div class="arrange">
+			<p>{{item.name}}</p>
+			<p>{{item.short_name}}</p>
+			<p>{{item.description}}</p>
+			<button class="btn" ng-click="dirctrl.onRemove({arg1:$index})">Don't want this one!</button>
+		</div>
+	</li>
+
+</ol>
