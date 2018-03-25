@@ -27,7 +27,7 @@
 			}
 
 		})
-		.state("items",{
+		/*.state("items",{
 			url:"/items/{categoryShortName}",
 			templateUrl:"src/menuDataSrc/templates/categoryItem.html",
 			controller:"categoryItemcontroller as individualitems",
@@ -36,6 +36,16 @@
 					return menuDataService.getItemsForCategory($stateParams.categoryShortName);
 				}]
 			}
+
+		});*/
+		.state("categories.items",{
+			/*url:"/items/{categoryShortName}",*/
+			templateUrl:"src/menuDataSrc/templates/categoryItem.html",
+			controller:"categoryItemcontroller as individualitems",
+			params:{
+				categoryShortName:null
+			}
+			
 
 		});
 	}

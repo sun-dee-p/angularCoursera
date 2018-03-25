@@ -3,13 +3,20 @@
 	angular.module("data")
 	.controller("categoryItemcontroller",CategoryItemController);
 
-	CategoryItemController.$inject = ["menuDataService","myItem"];
+	CategoryItemController.$inject = ["$stateParams","menuDataService"];
 
-	function CategoryItemController(menuDataService,myItem){
+	function CategoryItemController($stateParams,menuDataService){
+		console.log('here');
 		var individualitems = this;
-		console.log("inside cntrl");
-		console.log(myItem);
-		individualitems.categoryItem = myItem;
+		/*individualitems.categoryItem = myItem;*/
+		var promise = menuDataService.getItemsForCategory($stateParams.categoryShortName);
+				
+		promise.then(function(result){
+			console.log(result);
+			individualitems.categoryItem = result;
+		}).catch(function(error){
+			console.log(error);
+		});	
 	}
 
 
