@@ -125,6 +125,13 @@ div.signup {
 div.signup input {
   color:black;
 }
+.ng-touched.ng-valid {
+  border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
 /*MY INFO PAGE*/
 div.myInfopg {
   margin-left: 5px;
