@@ -1,16 +1,22 @@
 (function(){
 	"use strict";
+
 	angular.module("public")
-	.controller("myInfoController",myInfoController);
+	.controller("myInfoController",MyInfoController);
 
-	myInfoController.$inject = ["signUpService"];
+	MyInfoController.$inject = ["signUpService","ApiPath","infoToDisp","menuFav"];
 
-	function myInfoController(signUpService){
+	function MyInfoController(signUpService,ApiPath,infoToDisp,menuFav){
 		var myInfoCtrl = this;
+		console.log('here');
+		console.log(ApiPath);
 		myInfoCtrl.showlist = false;
 		myInfoCtrl.showmsg = false;
-		myInfoCtrl.infoToDisp = signUpService.saveUserInfo;
-		myInfoCtrl.menuFav = signUpService.saveUserMenuFav;
+		myInfoCtrl.basepath = ApiPath;
+		myInfoCtrl.infoToDisp = infoToDisp;
+		myInfoCtrl.menuFav = menuFav;
+		console.log(infoToDisp);
+		console.log(menuFav);
 		if(myInfoCtrl.infoToDisp == undefined){
 			myInfoCtrl.showmsg = true;
 			myInfoCtrl.dispMsg = "Not signed up yet!";
@@ -21,3 +27,7 @@
 		}
 	}
 })();
+
+
+
+

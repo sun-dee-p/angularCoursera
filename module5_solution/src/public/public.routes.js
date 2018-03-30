@@ -41,17 +41,25 @@ function routeConfig ($stateProvider) {
         }]
       }
     })
-    .state("signUp",{
+    .state("public.signUp",{
       url:'/signUp',
       templateUrl:'src/public/signUp/signUppage.html',
       controller:'signUpController',
       controllerAs:'signUpCtrl'
     })
-    .state("myInfo",{
+    .state("public.myInfo",{
       url:"/myInfo",
-      templateUrl:"src/public/myInfo/myInfopage.html",
+      templateUrl:"src/public/myInfo/my-info.html",
       controller:"myInfoController",
-      controllerAs:"myInfoCtrl",
+      controllerAs:'myInfoCtrl',
+      resolve:{
+        infoToDisp:["signUpService", function(signUpService){
+          return signUpService.saveUserInfo;
+        }],
+        menuFav:["signUpService", function(signUpService){
+          return signUpService.saveUserMenuFav;
+        }]
+      }
       
     });
 }

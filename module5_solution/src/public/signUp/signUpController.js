@@ -9,7 +9,7 @@
 	function SignUpController(signUpService){
 		var signUpCtrl = this;
 		signUpCtrl.recordUserInfo = function(info){
-			signUpService.getMenuItems(info.favdish).then(function(result){
+			signUpService.getMenuItems(info.favdish.toUpperCase()).then(function(result){
 				signUpCtrl.message = "Your information has been saved";
 				signUpService.saveUserInfo = info;
 				console.log(result);

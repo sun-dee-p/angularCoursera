@@ -9,7 +9,7 @@
 		<div class="myInfopg">
 			<p>Favourite dish: {{myInfoCtrl.menuFav.name}}</p>
 			<p>{{myInfoCtrl.menuFav.description}}</p>
-			<img ng-src="images/menu/{{myInfoCtrl.menuFav.category_short_name}}/{{myInfoCtrl.menuFav.category_short_name}}.jpg" alt="{{myInfoCtrl.menuFav.name}}">
+			<img ng-src="{{myInfoCtrl.basepath}}/images/{{myInfoCtrl.menuFav.short_name}}">
 		</div>
 		
 	</div>

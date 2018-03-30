@@ -1,0 +1,16 @@
+<div ng-show="$ctrl.showList">
+		<ul >
+			<li>Name: {{$ctrl.infoDisp.firstname}} {{$ctrl.infoDisp.lastname}}</li>
+			<li>E-mail: {{$ctrl.infoDisp.email}}</li>
+			<li>Contact number: {{$ctrl.infoDisp.phoneno}}</li>
+		</ul>
+		<div class="myInfopg">
+			<p>Favourite dish: {{$ctrl.menuFav.name}}</p>
+			<p>{{$ctrl.menuFav.description}}</p>
+			<img ng-src="{{$ctrl.basePath}}/images/{{$ctrl.menuFav.short_name}}">
+			<div class="menu-item-price">{{$ctrl.menuFav.price_small | currency}}<span> {{$ctrl.menuFav.small_portion_name}}</span> {{$ctrl.menuFav.price_large | currency}} <span>{{$ctrl.menuFav.large_portion_name}}</span></div>
+    	</div>
+		
+		
+	</div>
+<p ng-show="$ctrl.showMsg">{{$ctrl.dispMsg}}  <a ui-sref="public.signUp">Sign up now</a></p>
