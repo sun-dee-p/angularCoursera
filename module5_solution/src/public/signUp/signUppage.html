@@ -1,0 +1,41 @@
+
+
+<form class="signup" name="myForm" novalidate>
+	<h3>Sign up</h3>
+	<div class="signup">
+		<input type="text" name="firstname" ng-model="userInfo.firstname" placeholder="firstname" required>
+		<span ng-show="myForm.firstname.$error.required && myForm.firstname.$touched">firstname required</span>
+	</div>
+	<div class="signup">
+		<input type="text" name="lastname" ng-model="userInfo.lastname" placeholder="lastname" required>
+		<span ng-show="myForm.lastname.$error.required && myForm.lastname.$touched">lastname required</span>
+	</div>
+	<div class="signup">
+		<input type="email" name="email" ng-model="userInfo.email" placeholder="email" required>
+		<span ng-show="myForm.email.$error.required && myForm.email.$touched">email required</span>
+		<span ng-if="myForm.email.$invalid && myForm.email.$touched">
+		  Must be a valid email address: handle@domain format
+		</span>
+	</div>
+	<div class="signup">
+		<input type="text" name="phoneno" ng-model="userInfo.phoneno" placeholder="Phone ###-###-####" pattern="(\d{3})-(\d{3})-(\d{4})" required>
+		<span ng-if="myForm.phoneno.$invalid && myForm.phoneno.$touched">
+		  Phone must be in the format ###-###-####.
+		</span>
+
+	</div>
+	<div class="signup">
+		<input type="text" name="favdish" ng-model="userInfo.favdish" placeholder=" favourite dish" required>
+		<span ng-if="myForm.favdish.$invalid && myForm.favdish.$touched">
+			Please enter your favourite dish menu number
+		</span>
+	</div>
+	<div>
+		<button class="btn btn-primary" ng-disabled="myForm.$invalid" ng-click="signUpCtrl.recordUserInfo(userInfo)" >Submit</button>
+	</div>
+	
+</form>
+<div>
+	<p>{{signUpCtrl.message}}</p>
+</div>
+

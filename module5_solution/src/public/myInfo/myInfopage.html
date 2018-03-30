@@ -1,0 +1,19 @@
+<div>
+	<h3>Registerd Information</h3>
+	<div ng-show="myInfoCtrl.showlist">
+		<ul >
+			<li>Name: {{myInfoCtrl.infoToDisp.firstname}} {{myInfoCtrl.infoToDisp.lastname}}</li>
+			<li>E-mail: {{myInfoCtrl.infoToDisp.email}}</li>
+			<li>Contact number: {{myInfoCtrl.infoToDisp.phoneno}}</li>
+		</ul>
+		<div class="myInfopg">
+			<p>Favourite dish: {{myInfoCtrl.menuFav.name}}</p>
+			<p>{{myInfoCtrl.menuFav.description}}</p>
+			<img ng-src="images/menu/{{myInfoCtrl.menuFav.category_short_name}}/{{myInfoCtrl.menuFav.category_short_name}}.jpg" alt="{{myInfoCtrl.menuFav.name}}">
+		</div>
+		
+	</div>
+	
+	
+	<p ng-show="myInfoCtrl.showmsg">{{myInfoCtrl.dispMsg}}  <a ui-sref="signUp">Sign up now</a></p>
+</div>
