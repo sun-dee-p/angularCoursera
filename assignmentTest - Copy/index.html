@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="toWordsCntrl as salary">
+		<input type="text" name="name" placeholder="Employee name" ng-model="salary.Employee">
+		<p>{{salary.Employee}}</p>
+		<input type="text" name="num" placeholder="Salary" ng-model="salary.words" ng-keyup="salary.convertNumberToWords(salary.words)">
+		<p>{{salary.result}}</p>
+		
+	</div>
+
+
+</body>
+</html>
